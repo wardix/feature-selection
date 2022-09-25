@@ -121,16 +121,13 @@ void parseFile(const string path, parseResultType &result) {
     if (state == STATE_NEXT_ATTRIBUTE) {
       if (byte == '"') {
         state = STATE_ATTRIBUTE_START;
-        continue;
       }
       continue;
     }
     if (state == STATE_RECORD_END) {
       if (byte == '{') {
         state = STATE_RECORD_START;
-        continue;
       }
-      continue;
     }
   }
   inputFile.close();
